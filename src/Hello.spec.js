@@ -1,16 +1,15 @@
-/* eslint-disable testing-library/no-debugging-utils */
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import Hello from "./Hello";
 
-describe("app", () => {
+describe("Hello", () => {
   test("renders learn react link", () => {
-    render(<App />);
+    render(<Hello />);
     const linkElement = screen.getByText(/hello world/i);
     expect(linkElement).toBeInTheDocument();
   });
 
-  test('creates app', () => {
-    render(<App />);
+  test('creates Hello', () => {
+    render(<Hello />);
     // screen.debug();
   })
 });

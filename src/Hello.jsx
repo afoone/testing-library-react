@@ -1,9 +1,8 @@
-import './App.css';
 
 const title = "Hello World";
 
-function App() {
+function Hello() {
     return <div>{title}</div>;
 }
 
-export default App;
+export default Hello;
