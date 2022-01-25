@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TestId renders 1`] = `
+<div>
+  <div>
+    <p>
+      <span
+        data-testid="search-label"
+      >
+        Search:
+      </span>
+      <input
+        data-testid="search-input"
+        placeholder="Search..."
+        type="text"
+      />
+      <span
+        data-testid="search-results"
+      >
+        Searches for...
+      </span>
+    </p>
+  </div>
+</div>
+`;

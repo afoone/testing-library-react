@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function Search() {
-  const [search, setSearch] = React.useState('');
+  const [search, setSearch] = React.useState("");
 
   function handleChange(event) {
     setSearch(event.target.value);
@@ -12,7 +12,7 @@ function Search() {
       <SearchComponent value={search} onChange={handleChange}>
         Search:
       </SearchComponent>
-      <p>Searches for {search ? search : '...'}</p>
+      <p>Searches for {search ? search : "..."}</p>
     </div>
   );
 }
@@ -26,7 +26,7 @@ function SearchComponent({ value, onChange, children }) {
         type="text"
         value={value}
         onChange={onChange}
-        placeholder='Search...'
+        placeholder="Search..."
       />
     </div>
   );
