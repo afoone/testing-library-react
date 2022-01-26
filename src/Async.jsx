@@ -12,10 +12,17 @@ export default function Async() {
       const user = await getUser();
       setUser(user);
     };
-
     loadUser();
   }, []);
 
-
-  return <div>{user ? <p>Signed in as {user.name}</p> : null}</div>;
+  return (
+    <>
+      <div>{user ? <p>Signed in as {user.name}</p> : null}</div>
+      <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+      </ul>
+    </>
+  );
 }

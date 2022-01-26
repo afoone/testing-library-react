@@ -1,6 +1,9 @@
 /* eslint-disable testing-library/no-debugging-utils */
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Search from "./Search";
+import userEvent from '@testing-library/user-event';
+;
+
 
 const setup = () => {
   render(<Search />);
@@ -25,4 +28,16 @@ describe("Search", () => {
     expect(screen.getByRole("textbox")).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/search/i)).toBeInTheDocument();
   });
+
+  test("renders input content" , async () => {
+    expect(screen.queryByText(/Searches for pepe/)).toBeNull();
+    fireEvent.change(screen.getByRole("textbox"), {target: {value: "pepe"}});
+    expect(screen.getByRole("textbox")).toHaveValue("pepe");
+    expect(screen.getByText(/Searches for pepe/)).toBeInTheDocument();
+    // con user event
+    await userEvent.type(screen.getByRole("textbox"), " martinez");
+    expect(screen.getByText(/Searches for pepe martinez/)).toBeInTheDocument();
+
+  }
+    )
 });
